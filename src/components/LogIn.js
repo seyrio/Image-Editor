@@ -41,6 +41,11 @@ function LogIn() {
     }
   };
 
+  const mock = (e) => {
+    e.preventDefault();
+    history("/realm");
+  };
+
   return (
     <div className="container">
       <h2 className="text-center col-lg-6 my-4">Log In</h2>
@@ -71,8 +76,14 @@ function LogIn() {
       <p className="my-3">
         Don't have an account?{" "}
         <span>
-          <NavLink to="/">SignIn</NavLink>
+          <NavLink to="/sign-up">SignUp</NavLink>
         </span>
+      </p>
+      <p className="my-3">
+        Use mock credentials ~{" "}
+        <a href="/" onClick={mock}>
+          LogIn
+        </a>
       </p>
     </div>
   );

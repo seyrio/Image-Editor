@@ -38,14 +38,14 @@ function SignUp() {
       if (user && user.length) {
         alert("Details already exist!");
         document.getElementById("signUpForm").reset();
-      } else {
-        const newData = [...data, input];
-        setData(newData);
-        localStorage.setItem("userData", JSON.stringify(newData));
-        history("/login");
       }
-      setInput(initialInput);
+    } else {
+      const newData = [...data, input];
+      setData(newData);
+      localStorage.setItem("userData", JSON.stringify(newData));
+      history("/");
     }
+    setInput(initialInput);
   };
 
   return (
@@ -89,7 +89,7 @@ function SignUp() {
         Already have an account?{" "}
         <span>
           {" "}
-          <NavLink to="/login">LogIn</NavLink>
+          <NavLink to="/">LogIn</NavLink>
         </span>
       </p>
     </div>
